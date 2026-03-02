@@ -16,6 +16,12 @@ SERVICES = {
 }
 
 
+@router.get("/health")
+async def health() -> dict:
+    """Health check endpoint for Docker and Nginx."""
+    return {"status": "ok"}
+
+
 @router.post("/chat")
 @limiter.limit(settings.rate_limit)
 async def chat(request: Request, body: ChatRequest) -> StreamingResponse:

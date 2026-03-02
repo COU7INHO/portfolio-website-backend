@@ -13,7 +13,7 @@ from slowapi.errors import RateLimitExceeded
 from app.config import limiter, settings
 from app.routers import chat
 
-SYSTEM_PROMPT_PATH = Path(__file__).resolve().parent.parent / "about-me.md"
+SYSTEM_PROMPT_PATH = Path(__file__).resolve().parent / "about-me.md"
 
 
 @asynccontextmanager
